@@ -1,8 +1,9 @@
 import React, { useEffect } from 'react'
 import { useDispatch } from 'react-redux'
 import { closeMenu } from '../utils/appSlice';
-import { useParams, useSearchParams } from 'react-router-dom';
+import { useSearchParams } from 'react-router-dom';
 import CommentsContainer from './CommentsContainer';
+import LiveChat from './LiveChat';
 
 const WatchPage = () => {
 
@@ -17,21 +18,27 @@ const WatchPage = () => {
   
   
   return (
-    <div>
-        <div className='px-5 rounded-lg'>
-            <iframe className='rounded-xl'
-            width="900"
-            height="500"
-            src={'https://www.youtube.com/embed/'+searchParams.get('v')}
-            title='YouTube video player'
-            frameBorder="0" 
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowFullScreen
+    <div className='w-full'>
+        <div className='px-5 rounded-lg flex w-full'>
+            <div>
 
-            >
+              <iframe className='rounded-xl'
+              width="900"
+              height="500"
+              src={'https://www.youtube.com/embed/'+searchParams.get('v')}
+              title='YouTube video player'
+              frameBorder="0" 
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+              referrerpolicy="strict-origin-when-cross-origin"
+              allowFullScreen
 
-            </iframe>
+              >
+
+              </iframe>
+            </div>
+            <div className='w-full'>
+              <LiveChat />
+            </div>
           
         </div>
         {/* Comments Section */}
