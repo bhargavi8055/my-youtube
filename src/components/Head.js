@@ -67,7 +67,7 @@ const Head = () => {
 
           {
             suggestions.map(suggestion=>(
-              <li className='py-2 shadow-sm hover:bg-gray-100' key={suggestion}>🔍 {suggestion}</li>
+              <li className='py-2 shadow-sm hover:bg-gray-100 list-none' key={suggestion}>🔍 {suggestion}</li>
             ))
           }
           </div>)

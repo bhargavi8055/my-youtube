@@ -17,7 +17,7 @@ const chatMessages = useSelector(store=>store.chat.messages)
             name:generateRandomName(),
             message:generateRandomMessage(20)
         }))
-    },1000)
+    },1500)
     return ()=>{clearInterval(interval)}
  },[])
   return (
